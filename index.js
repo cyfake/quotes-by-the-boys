@@ -11,9 +11,6 @@ const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
 // Create new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-// Log into Discord with token
-client.login(process.env.DISCORD_TOKEN);
-
 client.commands = new Collection();
 
 // Dynamic retrieval of command files
@@ -48,3 +45,6 @@ for (const file of eventsFolder) {
     client.on(events.name, (...args) => events.execute(...args));
   }
 }
+
+// Log into Discord with token
+client.login(process.env.DISCORD_TOKEN);
