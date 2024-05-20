@@ -1,5 +1,6 @@
-// Initilisation
 const { Events } = require("discord.js");
+
+// Initilisation
 
 module.exports = {
   name: Events.ClientReady,
