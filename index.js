@@ -32,3 +32,19 @@ for (const file of commandsFolder) {
     );
   }
 }
+
+// Dynamic retrieval of events files
+const eventsPath = path.join(__dirname, "events");
+const eventsFolder = fs
+  .readdirSync(eventsPath)
+  .filter((file) => file.endsWith(".js"));
+
+for (const file of eventsFolder) {
+  const filePath = path.join(eventsPath, file);
+  const events = require(filePath);
+  if (events.once) {
+    client.once(events.name, (...args) => events.execute(...args));
+  } else {
+    client.on(events.name, (...args) => events.execute(...args));
+  }
+}
