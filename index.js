@@ -6,7 +6,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 // Require database models
-const { Users, Quotes } = require("./dbObjects.js");
+const { Users, Quotes } = require("./dbInit.js");
 
 // Require the necessary discord.js classes
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
