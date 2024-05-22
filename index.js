@@ -1,9 +1,12 @@
 // Require the .env file with the Bot Token, Client ID and Guild ID
 require("dotenv").config();
 
-// Required modules to load command files
+// Require modules to load command files
 const fs = require("node:fs");
 const path = require("node:path");
+
+// Require database models
+const { Users, Quotes } = require("./dbObjects.js");
 
 // Require the necessary discord.js classes
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
