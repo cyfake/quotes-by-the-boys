@@ -27,10 +27,8 @@ Users.hasMany(Quotes, {
 const force = process.argv.includes("--force") || process.argv.includes("--f");
 
 sequelize
-  .authenticate()
+  .sync({ force })
   .then(async () => {
-    await Users.sync({ force });
-    await Quotes.sync({ force });
     console.log("All models were synchronised successfully.");
 
     sequelize.close();
