@@ -34,9 +34,11 @@ module.exports = {
           });
         });
 
-      return interaction.reply(
-        `Quote successfully added. Quote is "${quote}" ~ ${username}`
-      );
+      await interaction.reply({
+        content: "Quote successfully added.",
+        ephemeral: true,
+      });
+      return interaction.followUp(`"*${quote}*" ~**${username}**`);
     } catch (error) {
       return interaction.reply(`Something went wrong. ${error}`);
     }
