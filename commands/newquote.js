@@ -16,7 +16,7 @@ module.exports = {
         username: username,
       })
         .then((user) => {
-          const user_id = user.dataValues.user_id;
+          const user_id = user.user_id;
           Quotes.create({
             quote: quote,
             user_id: user_id,
@@ -30,7 +30,7 @@ module.exports = {
           });
           Quotes.create({
             quote: quote,
-            user_id: user.dataValues.user_id,
+            user_id: user.user_id,
           });
         });
 
