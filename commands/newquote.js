@@ -12,17 +12,31 @@ module.exports = {
     const quote = interaction.targetMessage.content;
     const username = interaction.targetMessage.author.username;
     try {
-      await Users.create({
+      Users.create({
         username: username,
-      });
+      })
+        .then((user) => {
+          const user_id = user.dataValues.user_id;
+          Quotes.create({
+            quote: quote,
+            user_id: user_id,
+          });
+        })
+        .catch(async () => {
+          const user = await Users.findOne({
+            where: {
+              username: username,
+            },
+          });
+          Quotes.create({
+            quote: quote,
+            user_id: user.dataValues.user_id,
+          });
+        });
 
-      await Quotes.create({
-        quote: quote,
-      });
-      interaction.reply(
+      return interaction.reply(
         `Quote successfully added. Quote is "${quote}" ~ ${username}`
       );
-      return console.log(`Quote successfully added. Quote is "${quote}"`);
     } catch (error) {
       return interaction.reply(`Something went wrong. ${error}`);
     }
