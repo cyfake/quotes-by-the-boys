@@ -18,13 +18,13 @@ module.exports = {
       Quotes.findOne({
         order: sequelize.random(),
       }).then((res) => {
-        const quote = res.dataValues.quote;
+        const quote = res.quote;
         Users.findOne({
           where: {
-            user_id: res.dataValues.user_id,
+            user_id: res.user_id,
           },
         }).then((res) => {
-          const username = res.dataValues.username;
+          const username = res.username;
           return interaction.reply(`"*${quote}*" ~**${username}**`);
         });
       });
