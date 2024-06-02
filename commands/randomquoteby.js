@@ -12,7 +12,7 @@ const sequelize = new Sequelize("database", "username", "password", {
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("randomquoteby")
-    .setDescription("Get a random quote from a specific user.")
+    .setDescription("Get a random quote said by a specific user.")
     .addUserOption((option) =>
       option
         .setName("user")
