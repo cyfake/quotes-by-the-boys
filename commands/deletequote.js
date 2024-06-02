@@ -10,7 +10,22 @@ module.exports = {
         .setName("quote")
         .setDescription("The exact quote to be deleted.")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
+  async autocomplete(interaction) {
+    const focusedValue = interaction.options.getFocused();
+    const allQuotes = await Quotes.findAll();
+
+    const choices = allQuotes.map((quote) => quote.quote);
+
+    const filtered = choices.filter((choice) =>
+      choice.startsWith(focusedValue)
+    );
+
+    await interaction.respond(
+      filtered.map((choice) => ({ name: choice, value: choice }))
+    );
+  },
   async execute(interaction) {
     const quote = interaction.options.getString("quote");
 
