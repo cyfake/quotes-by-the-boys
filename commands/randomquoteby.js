@@ -13,14 +13,29 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("randomquoteby")
     .setDescription("Get a random quote said by a specific user.")
-    .addUserOption((option) =>
+    .addStringOption((option) =>
       option
         .setName("user")
         .setDescription("The user you want to quote.")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
+  async autocomplete(interaction) {
+    const focusedValue = interaction.options.getFocused();
+    const allUsers = await Users.findAll();
+
+    const choices = allUsers.map((user) => user.username);
+
+    const filtered = choices.filter((choice) =>
+      choice.startsWith(focusedValue)
+    );
+
+    await interaction.respond(
+      filtered.map((choice) => ({ name: choice, value: choice }))
+    );
+  },
   async execute(interaction) {
-    const username = interaction.options.getUser("user").username;
+    const username = interaction.options.getString("user");
 
     try {
       Users.findOne({ where: { username: username } }).then((res) => {
