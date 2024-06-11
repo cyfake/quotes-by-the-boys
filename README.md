@@ -23,23 +23,39 @@ An ephemeral message will be sent to you by the bot once the quote has been succ
 
 ### Getting a random quote
 
-Use `/randomquote` to get a random quote said by anyone on the database.
+```
+/randomquote
+```
+
+Get a random quote said by anyone on the database.
 
 ### Getting a random quote said by a specific user
 
-Use <code>/randomquoteby <span style="color:maroon">_[user]_</span></code> to get a random quote said by a specific user, of username `user`.
+```
+/randomquoteby user
+```
+
+Get a random quote said by a specific user, of username `user`.
 
 The `user` field can be chosen from a list of users currently in the database.
 
 ### Getting a specific quote said by a specific user
 
-Use <code>/quote <span style="color:maroon">_[user]_</span> <span style="color:navy">_[quote]_</span></code> to get a specific quote of value `quote` said by a specific user of username `user` .
+```
+/quote user quote
+```
+
+Get a specific quote of value `quote` said by a specific user of username `user` .
 
 Both the `user` and `quote` fields can be chosen from a list of users and quotes currently in the database.
 
 ### Deleting a quote
 
-Use <code>/deletequote <span style="color:navy">_[quote]_</span></code> to delete a specific quote of value `quote`.
+```
+/deletequote quote
+```
+
+Delete a specific quote of value `quote`.
 
 The `quote` field can be chosen from a list of quotes currently in the database.
 
