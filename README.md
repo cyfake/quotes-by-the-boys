@@ -27,19 +27,19 @@ Use `/randomquote` to get a random quote said by anyone on the database.
 
 ### Getting a random quote said by a specific user
 
-Use `$${/randomquoteby \color{maroon}_[user]_}$$` to get a random quote said by a specific user, of username `user`.
+Use `$${/randomquoteby \color{red}_[user]_}$$` to get a random quote said by a specific user, of username `user`.
 
 The `user` field can be chosen from a list of users currently in the database.
 
 ### Getting a specific quote said by a specific user
 
-Use `$${/quote \color{maroon}_[user]_ \space \color{navy}_[quote]_}$$` to get a specific quote of value `quote` said by a specific user of username `user` .
+Use `$${/quote \color{red}_[user]_ \space \color{blue}_[quote]_}$$` to get a specific quote of value `quote` said by a specific user of username `user` .
 
 Both the `user` and `quote` fields can be chosen from a list of users and quotes currently in the database.
 
 ### Deleting a quote
 
-Use <code>/deletequote <span style="color:navy">_[quote]_</span></code> to delete a specific quote of value `quote`.
+Use `$${/deletequote \color{blue}_[quote]_}$$` to delete a specific quote of value `quote`.
 
 The `quote` field can be chosen from a list of quotes currently in the database.
 
