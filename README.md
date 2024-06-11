@@ -27,13 +27,13 @@ Use `/randomquote` to get a random quote said by anyone on the database.
 
 ### Getting a random quote said by a specific user
 
-Use <code>/randomquoteby <span style="color:maroon">_[user]_</span></code> to get a random quote said by a specific user, of username `user`.
+Use `$${/randomquoteby \color{maroon}_[user]_}$$` to get a random quote said by a specific user, of username `user`.
 
 The `user` field can be chosen from a list of users currently in the database.
 
 ### Getting a specific quote said by a specific user
 
-Use <code>/quote <span style="color:maroon">_[user]_</span> <span style="color:navy">_[quote]_</span></code> to get a specific quote of value `quote` said by a specific user of username `user` .
+Use `$${/quote \color{maroon}_[user]_ \space \color{navy}_[quote]_}$$` to get a specific quote of value `quote` said by a specific user of username `user` .
 
 Both the `user` and `quote` fields can be chosen from a list of users and quotes currently in the database.
 
