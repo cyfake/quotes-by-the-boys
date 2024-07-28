@@ -59,8 +59,7 @@ Delete a specific quote of value `quote`.
 
 The `quote` field can be chosen from a list of quotes currently in the database.
 
-## Installation
-
 ## Built With
 
-## Acknowledgements
+- [Discord.js](https://discord.js.org/) - Node.js module used to interact with the Discord API.
+- [Sequelize](https://sequelize.org/) - ORM used to store the quotes in the SQLite database.
